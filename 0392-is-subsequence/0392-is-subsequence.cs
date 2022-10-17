@@ -8,6 +8,11 @@ public class Solution {
             if(s[sindex]==t[tindex])
             {
                 sindex++;
+                
+                if(sindex==s.Length)
+                {
+                    return true;
+                }
             }
             tindex++;
         }
