@@ -3,6 +3,10 @@ public class Solution {
         
         int sindex=0,tindex=0;
         
+        if(s.Length==0)
+            return true;
+        
+        
         while(sindex<s.Length && tindex<t.Length)
         {
             if(s[sindex]==t[tindex])
@@ -17,10 +21,6 @@ public class Solution {
             tindex++;
         }
         
-        if(sindex==s.Length)
-        {
-            return true;
-        }
         return false;
     }
 }
