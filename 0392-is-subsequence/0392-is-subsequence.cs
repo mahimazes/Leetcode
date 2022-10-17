@@ -3,9 +3,6 @@ public class Solution {
         
         int sindex=0,tindex=0;
         
-        if(s.Length==0)
-            return true;
-        
         
         while(sindex<s.Length && tindex<t.Length)
         {
@@ -13,13 +10,14 @@ public class Solution {
             {
                 sindex++;
                 
-                if(sindex==s.Length)
-                {
-                    return true;
-                }
             }
             tindex++;
         }
+        
+          if(sindex==s.Length)
+          {
+                    return true;
+          }
         
         return false;
     }
