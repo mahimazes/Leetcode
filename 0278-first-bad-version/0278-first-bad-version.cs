@@ -4,7 +4,7 @@
 public class Solution : VersionControl {
     public int FirstBadVersion(int n) {
         
-        int left=1;
+       /* int left=1;
         int right=n;
         
         while(left<right)
@@ -22,7 +22,8 @@ public class Solution : VersionControl {
         }
         
         return left;
-       // return RecursiveBadVersion(1,n);
+        */
+       return RecursiveBadVersion(1,n);
         
     }
     
@@ -34,7 +35,7 @@ public class Solution : VersionControl {
             return start;
         }
         
-        int mid=(start+(end-start))/2;
+        int mid=start+(end-start)/2;
         
         if(!IsBadVersion(mid))
         {
