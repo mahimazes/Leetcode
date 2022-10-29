@@ -74,10 +74,7 @@ public class Solution {
             }
         }
         
-        foreach(var vis in visited)
-        {
-            Console.WriteLine(vis.x+" "+vis.y+ " "+grid[vis.x][vis.y]);
-        }
+        
         
         return islands;
     }
