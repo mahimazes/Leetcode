@@ -1,4 +1,4 @@
-/* Write your T-SQL query statement below */
+# Write your MySQL query statement below
 select a.player_id, a.device_id from Activity a
-                            where event_date=(select Min(event_date) from Activity b
-                                                                    where b.player_id=a.player_id )
+                            where (a.player_id, a.event_date) in (select player_id, Min(event_date) from Activity b
+                                                                    group by b.player_id )
