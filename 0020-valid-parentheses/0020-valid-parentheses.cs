@@ -13,7 +13,8 @@ public class Solution {
                 {
                    temp=stringStack.Peek();
                 
-                    if( (temp=='(' && c==')') || ( temp=='{' && c=='}') || ( temp=='[' && c==']'))
+                    if( (temp=='(' && c==')') || ( temp=='{' && c=='}') 
+                                              || ( temp=='[' && c==']') )
                     {   
                         stringStack.Pop();
                     }
