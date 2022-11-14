@@ -1,6 +1,5 @@
 public class Solution {
     public int[] RunningSum(int[] nums) {
-        
         int[] res=new int[nums.Length];
         int sum=0;
         
