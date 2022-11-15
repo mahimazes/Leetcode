@@ -27,7 +27,6 @@ public class Solution {
             else if((int)t[i-1]<=(int)t[i] && order.ElementAt(i)==0)
             {
                 Console.WriteLine("solution2 "+t[i-1]+" "+t[i]+" "+order.ElementAt(i));
-
                 return false;
             }
         }
