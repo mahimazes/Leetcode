@@ -14,10 +14,10 @@ public class Solution {
             }
             stack.Push(nums2[i]);
 
-            while(stack.Count!=0 && nums2[i]<stack.Peek())
-            {
-                stack.Pop();
-            }
+           // while(stack.Count!=0 && nums2[i]<stack.Peek())
+            //{
+              //  stack.Pop();
+            //}
             
         }
         
