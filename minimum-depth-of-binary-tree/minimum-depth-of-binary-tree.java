@@ -24,6 +24,8 @@ class Solution {
     
     public int minDepthFun(TreeNode root, int minvalue)
     {
+        int minLeft=Integer.MAX_VALUE;
+        int minRight=Integer.MAX_VALUE;
           if(root==null)
             return 0;
         
@@ -31,10 +33,10 @@ class Solution {
             return 1;
          }
         if(root.left!=null)
-            minvalue=Math.min(minDepthFun(root.left,minvalue),minvalue);
+            minLeft=Math.min(minDepthFun(root.left,minvalue),minvalue);
         if(root.right!=null)
-            minvalue=Math.min(minDepthFun(root.right,minvalue),minvalue);
+            minRight=Math.min(minDepthFun(root.right,minvalue),minvalue);
         
-        return minvalue+1;
+        return Math.min(minLeft,minRight)+1;
     }
 }
