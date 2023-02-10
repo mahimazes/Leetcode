@@ -22,28 +22,6 @@ public class KthLargest {
     public int Add(int val) {
         
         heap.Enqueue(val,val);
-       /* int result=0;
-        int temp=0;
-        
-        List<int> temp_k=new List<int>();
-        
-       int count=0;
-        while(count<k_val && heap.Count>0)
-        {
-            if(heap.TryDequeue(out temp,out result))
-            {
-                count++;
-                //Console.WriteLine(k_val+","+result+","+count);
-                temp_k.Add(result);
-            }
-            
-        }
-        
-        foreach(var i in temp_k)
-        {
-            heap.Enqueue(i,i);
-        }
-        */
         
         while(heap.Count>k_val)
         {
