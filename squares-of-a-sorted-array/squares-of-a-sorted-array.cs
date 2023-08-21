@@ -1,26 +1,25 @@
 public class Solution {
-    public int square(int x)
-    {
-        return x*x;
-    }
     public int[] SortedSquares(int[] nums) {
         
-        int left=0;
-        int right=nums.Length-1;
         int[] result=new int[nums.Length];
         
-        for(int i=nums.Length-1;i>=0;i--)
+        int first=0;
+        int last=nums.Length-1;
+        int ind=last;
+        
+        while(first<=last && ind>=0)
         {
-            if(Math.Abs(nums[right])>Math.Abs(nums[left]))
+            if(Math.Abs(nums[first])<Math.Abs(nums[last]))
             {
-                result[i]=(int)Math.Pow(nums[right],2);
-                right--;
+               result[ind]=(int)Math.Pow(nums[last],2);
+                last--;
             }
             else
             {
-                result[i]=(int)Math.Pow(nums[left],2);
-                left++;
+                result[ind]=(int)Math.Pow(nums[first],2);
+                first++;
             }
+            ind--;
         }
         
         return result;
