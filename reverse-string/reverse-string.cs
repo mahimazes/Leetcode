@@ -1,8 +1,7 @@
 public class Solution {
     public void ReverseString(char[] s) {
-       
         int first=0;
-        int last=s.Count()-1;
+        int last=s.Length-1;
         char temp;
         
         while(first<last)
