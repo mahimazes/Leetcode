@@ -3,30 +3,31 @@ public class Solution {
         
         Stack<int> stack=new Stack<int>();
         
-        Dictionary<int,int> hMap=new Dictionary<int,int>();
+        Dictionary<int,int> map=new Dictionary<int,int>();
         
         for(int i=0;i<nums2.Length;i++)
         {
-            int count=0;
-            while(stack.Count!=0 && nums2[i]>stack.Peek())
-            {   
-                hMap.Add(stack.Pop(),nums2[i]);
+            while(stack.Count>0 && nums2[i]>nums2[stack.Peek()])
+            {
+                //Console.WriteLine(nums2[i]+","+stack.Peek());
+                int j=stack.Pop();
+                map.Add(nums2[j],nums2[i]);
             }
-            stack.Push(nums2[i]);
             
+            stack.Push(i);
         }
         
-        int[] result=new int[nums1.Length];
-        
+        int[] res=new int[nums1.Length];
         for(int i=0;i<nums1.Length;i++)
         {
-            if(hMap.ContainsKey(nums1[i]))
-                result[i]=hMap[nums1[i]];
+            if(map.ContainsKey(nums1[i]))
+            {
+                res[i]=map[nums1[i]];
+            }
             else
-                result[i]=-1;
+                res[i]=-1;
         }
         
-        return result;
-        
+        return res;
     }
 }
