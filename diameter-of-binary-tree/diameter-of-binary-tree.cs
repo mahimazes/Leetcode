@@ -22,7 +22,7 @@ public class Solution {
         
         dfs(root,0);
         
-        return diameter-1;
+        return diameter;
         
     }
     
@@ -33,7 +33,7 @@ public class Solution {
     
         int left=dfs(root.left, len);
         int right=dfs(root.right, len);
-        diameter=Math.Max(diameter,left+right+1);
+        diameter=Math.Max(diameter,left+right);
 
         return Math.Max(left,right)+1;
     }
