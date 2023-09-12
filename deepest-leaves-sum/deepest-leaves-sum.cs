@@ -14,26 +14,40 @@
 public class Solution {
     public int DeepestLeavesSum(TreeNode root) {
         
+        Queue<TreeNode> q= new Queue<TreeNode>();
+        
         if(root==null)
             return 0;
         
-        Queue<TreeNode> queue=new Queue<TreeNode>();
-        queue.Enqueue(root);
+        q.Enqueue(root);
+        
         int sum=0;
-        while(queue.Count!=0)
+        
+        while(q.Count>0)
         {
-            int nodes=queue.Count;
-            sum=0;
-            for(int i=0;i<nodes;i++)
+            
+            int len=q.Count;
+            int levelSum=0;
+            
+            for(int i=0;i<len;i++)
             {
-                TreeNode node=queue.Dequeue();
-                sum=sum+node.val;
+                TreeNode node=q.Dequeue();
+                
+                levelSum=levelSum+node.val;
                 
                 if(node.left!=null)
-                    queue.Enqueue(node.left);
+                {
+                    q.Enqueue(node.left);
+                }
+                
                 if(node.right!=null)
-                    queue.Enqueue(node.right);
+                {
+                    q.Enqueue(node.right);
+                }
             }
+            
+            sum=levelSum;
+            
         }
         
         return sum;
