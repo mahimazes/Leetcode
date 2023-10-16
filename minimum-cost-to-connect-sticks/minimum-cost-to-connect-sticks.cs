@@ -1,25 +1,28 @@
 public class Solution {
     public int ConnectSticks(int[] sticks) {
         
-        PriorityQueue<int,int> heap=new PriorityQueue<int,int>();
+        //Minheap
+        
+        PriorityQueue<int,int> minheap=new PriorityQueue<int,int>();
         
         for(int i=0;i<sticks.Length;i++)
         {
-            heap.Enqueue(sticks[i],sticks[i]);
+            minheap.Enqueue(sticks[i],sticks[i]);
         }
         
-        int sum=0;
-        while(heap.Count>1)
+        int result=0;
+        
+        while(minheap.Count!=1)
         {
-            int a=heap.Dequeue();
-            int b=heap.Dequeue();
+            int stick1=minheap.Dequeue();
+            int stick2=minheap.Dequeue();
+            int cost= stick1+stick2;
+            result=result+cost;
             
-            sum=sum+a+b;
-            
-            heap.Enqueue(a+b,a+b);
+            minheap.Enqueue(cost,cost);
         }
         
-        return sum;
+        return result;
         
     }
 }
