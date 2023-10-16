@@ -1,34 +1,35 @@
 public class KthLargest {
     
-    PriorityQueue<int,int> heap;
-    int k_val;
+    PriorityQueue<int,int> minheap=new PriorityQueue<int,int>();
+    int Kval;
+    
     public KthLargest(int k, int[] nums) {
-        
-        heap=new PriorityQueue<int, int>();
+        Kval=k;
         
         for(int i=0;i<nums.Length;i++)
         {
-            heap.Enqueue(nums[i],nums[i]);
-        }
-        
-        k_val=k;
-        
-        while(heap.Count>k)
-        {
-            heap.Dequeue();
+            minheap.Enqueue(nums[i],nums[i]);
+            if(i>=Kval)
+            {
+                minheap.Dequeue();
+            }
+                
         }
     }
     
     public int Add(int val) {
         
-        heap.Enqueue(val,val);
-        
-        while(heap.Count>k_val)
+        int kthlargestVal=0;
+        minheap.Enqueue(val,val);
+        if(minheap.Count>Kval)
         {
-            heap.Dequeue();
+            minheap.Dequeue();
         }
-            
-        return heap.Peek();
+        
+        kthlargestVal=minheap.Peek();
+        
+        return kthlargestVal;
+        
     }
 }
 
