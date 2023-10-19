@@ -1,21 +1,23 @@
 public class Solution {
-    Dictionary<int,int> map=new Dictionary<int,int>();
-    
     public int ClimbStairs(int n) {
-        if(n==0 || n==1)
-        {
+        
+        if(n==1)
             return 1;
+        
+        int[] dp=new int[n+1];
+        
+        dp[0]=0;
+        dp[1]=1;
+        dp[2]=2;
+       
+        int sum=0;
+        
+        for(int i=3;i<=n;i++)
+        {
+            dp[i]=dp[i-1]+dp[i-2];    
+            
         }
         
-        if(map.ContainsKey(n))
-        {
-            return map[n];
-        }
-        else
-        {
-            map.Add(n,ClimbStairs(n-1)+ClimbStairs(n-2));
-        }
-        
-        return map[n];
+        return dp[n];
     }
 }
