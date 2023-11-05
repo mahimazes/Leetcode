@@ -10,7 +10,6 @@ public class Solution {
         dp[1]=1;
         dp[2]=2;
        
-        int sum=0;
         
         for(int i=3;i<=n;i++)
         {
