@@ -16,27 +16,27 @@
 class Solution {
     public int minDepth(TreeNode root) {
         
-        int minvalue=Integer.MAX_VALUE;
-       
-        return minDepthFun(root,minvalue);
-        
-    }
-    
-    public int minDepthFun(TreeNode root, int minvalue)
-    {
-        int minLeft=Integer.MAX_VALUE;
-        int minRight=Integer.MAX_VALUE;
-          if(root==null)
+        if(root==null)
             return 0;
         
-        if ((root.left == null) && (root.right == null)) {
-            return 1;
-         }
+        int left=0;
+        int right=0;
         if(root.left!=null)
-            minLeft=Math.min(minDepthFun(root.left,minvalue),minvalue);
+        {
+            left=minDepth(root.left);    
+        }
         if(root.right!=null)
-            minRight=Math.min(minDepthFun(root.right,minvalue),minvalue);
+        {
+            right=minDepth(root.right);
+        }
         
-        return Math.min(minLeft,minRight)+1;
+        if(left!=0 && right!=0)
+            return Math.min(left,right)+1;
+        
+        if(left!=0)
+            return left+1;
+        
+        return right+1;
+        
     }
 }
