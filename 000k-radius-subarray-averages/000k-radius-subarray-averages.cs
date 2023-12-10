@@ -39,6 +39,8 @@ public class Solution {
              else 
              {
                 result[i] = (int)((prefix[right] - (left > 0 ? prefix[left - 1] : 0)) / (2 * k + 1));
+                result[i] = (int)((prefix[right] - prefix[left] +nums[left] ) / (2 * k + 1));
+ 
              }
         }
 
