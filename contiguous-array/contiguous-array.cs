@@ -9,14 +9,6 @@ public class Solution {
         
         for(int i=0;i<nums.Length;i++)
         {
-            // if(nums[i]==0)
-            // {
-            //     sum=sum-1;
-            // }
-            // else
-            // {
-            //     sum=sum+nums[i];
-            // }
             
             sum=sum + (nums[i]==1 ? 1 : -1);
             
